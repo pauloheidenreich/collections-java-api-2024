@@ -1,7 +1,6 @@
-package Ordenacao;
+package main.java.list.Ordenacao;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
