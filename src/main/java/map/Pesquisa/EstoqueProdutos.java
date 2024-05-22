@@ -18,15 +18,45 @@ public class EstoqueProdutos {
         System.out.println(estoqueProdutosMap);
     }
 
+    public double calcularValorTotalEstoque() {
+        double totalEstoque = 0;
+        if (!estoqueProdutosMap.isEmpty()) {
+            for (Produto produto : estoqueProdutosMap.values()) {
+                totalEstoque += produto.getPreco() * produto.getQuantidade();
+            }
+        } else {
+            System.out.println("O estoque é de: " + totalEstoque + " produtos.");;
+        }
+        return totalEstoque;
+    }
+
+    public Produto buscarProdutoMaisCaro() {
+        Produto produtoMaisCaro = null;
+        double maiorPreco = Double.MIN_VALUE;
+        if (!estoqueProdutosMap.isEmpty()) {
+            for (Produto produto : estoqueProdutosMap.values()) {
+                if (produto.getPreco() > maiorPreco) {
+                    produtoMaisCaro = produto;
+                    maiorPreco = produto.getPreco();
+                }
+            }
+        }
+        return produtoMaisCaro;
+    }
+
     public static void main(String[] args) {
 
         EstoqueProdutos estoqueProdutos = new EstoqueProdutos();
 
-        estoqueProdutos.adicionarProduto(1L,"CPU", 1500.00, 5);
         estoqueProdutos.adicionarProduto(2L,"Teclado", 100.00, 5);
+        estoqueProdutos.adicionarProduto(1L,"CPU", 1500.00, 5);
         estoqueProdutos.adicionarProduto(3L,"Mouse", 80.00, 5);
-        estoqueProdutos.adicionarProduto(4L,"Monitor", 80.00, 5);
+        estoqueProdutos.adicionarProduto(4L,"Monitor", 600.00, 5);
 
         estoqueProdutos.exibirEstoqueProdutos();
+
+        System.out.println("O valor total do estoque é: $" + estoqueProdutos.calcularValorTotalEstoque());
+        System.out.println("O produto mais caro do estoque é: " + estoqueProdutos.buscarProdutoMaisCaro());
     }
+
 }
