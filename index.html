@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections Java API 2024 — Documentação</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent2: #818cf8;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a5f, #312e81);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 { color: var(--accent2); font-size: 1rem; margin: 1rem 0 0.5rem; }
+
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.35rem; }
+
+    code, .path {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      background: #0f172a;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #7dd3fc;
+    }
+
+    pre {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin: 0.75rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th { color: var(--accent); }
+
+    .badge {
+      display: inline-block;
+      background: #334155;
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-right: 0.35rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Collections Java API 2024</h1>
+    <p>Repositório de estudos do Bootcamp Java Backend Santander — DIO. Exercícios práticos sobre a API de Collections do Java.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Sobre o projeto</h2>
+      <p>
+        Este repositório reúne <strong>24 classes Java</strong> organizadas para aprender o uso de
+        <strong>List</strong>, <strong>Set</strong> e <strong>Map</strong> — os três pilares da
+        Java Collections Framework.
+      </p>
+      <p style="margin-top: 1rem;">
+        Cada exercício é uma classe independente com método <code>main</code>, permitindo executar e
+        testar os conceitos diretamente no IDE.
+      </p>
+      <p style="margin-top: 1rem;">
+        <span class="badge">Java 17</span>
+        <span class="badge">IntelliJ IDEA</span>
+        <span class="badge">Sem Maven/Gradle</span>
+        <span class="badge">GPL-3.0</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Estrutura do repositório</h2>
+      <pre>src/main/java/
+├── list/          → ArrayList
+│   ├── OperacoesBasicas/
+│   ├── Pesquisa/
+│   └── Ordenacao/
+├── set/           → HashSet, TreeSet
+│   ├── OperacoesBasicas/
+│   ├── Pesquisa/
+│   └── Ordenacao/
+└── map/           → HashMap
+    ├── OperacoesBasicas/
+    └── Pesquisa/</pre>
+      <p style="margin-top: 1rem; color: var(--muted);">
+        A organização segue o padrão: <strong>tipo de coleção × tipo de operação</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Módulos e exemplos</h2>
+
+      <h3>List — ArrayList</h3>
+      <ul>
+        <li><strong>Operações básicas:</strong> <code>CarrinhoDeCompras</code>, <code>ListaTarefas</code>, <code>Tarefas</code></li>
+        <li><strong>Pesquisa:</strong> <code>CatalogoLivros</code>, <code>SomaNumeros</code></li>
+        <li><strong>Ordenação:</strong> <code>OrdenacaoPessoa</code>, <code>OrdenacaoNumero</code></li>
+      </ul>
+
+      <h3>Set — HashSet / TreeSet</h3>
+      <ul>
+        <li><strong>Operações básicas:</strong> <code>ConjuntoConvidados</code>, <code>ConjuntoPalavrasUnicas</code></li>
+        <li><strong>Pesquisa:</strong> <code>AgendaContatos</code>, <code>ListaTarefas</code></li>
+        <li><strong>Ordenação:</strong> <code>CadastroProdutos</code>, <code>GerenciadorAlunos</code></li>
+      </ul>
+
+      <h3>Map — HashMap</h3>
+      <ul>
+        <li><strong>Operações básicas:</strong> <code>AgendaContatos</code> (nome → telefone)</li>
+        <li><strong>Pesquisa:</strong> <code>EstoqueProdutos</code> (valor total, produto mais caro)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conceitos abordados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Conceito</th>
+            <th>Onde aparece</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ArrayList</code></td>
+            <td>Listas ordenadas, permite duplicatas</td>
+          </tr>
+          <tr>
+            <td><code>HashSet</code></td>
+            <td>Conjuntos sem duplicatas (<code>equals</code> / <code>hashCode</code>)</td>
+          </tr>
+          <tr>
+            <td><code>TreeSet</code></td>
+            <td>Conjuntos ordenados (<code>Comparable</code> / <code>Comparator</code>)</td>
+          </tr>
+          <tr>
+            <td><code>HashMap</code></td>
+            <td>Pares chave-valor</td>
+          </tr>
+          <tr>
+            <td><code>Comparable</code></td>
+            <td>Ordenação natural (<code>Pessoa</code>, <code>Produto</code>)</td>
+          </tr>
+          <tr>
+            <td><code>Comparator</code></td>
+            <td>Ordenação customizada (altura, preço, nota)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Como executar</h2>
+      <ol style="padding-left: 1.25rem;">
+        <li>Clone o repositório e abra no <strong>IntelliJ IDEA</strong> (Java 17).</li>
+        <li>Navegue até qualquer classe com <code>public static void main</code>.</li>
+        <li>Execute com o botão Run ou <code>Shift + F10</code>.</li>
+      </ol>
+      <p style="margin-top: 1rem; color: var(--muted);">
+        Exemplo: <span class="path">src/main/java/list/OperacoesBasicas/CarrinhoDeCompras.java</span>
+      </p>
+    </section>
+
+    <section>
+      <h2>Observações técnicas</h2>
+      <ul>
+        <li>Pacotes no formato <code>main.java.list...</code> (estrutura do bootcamp, não padrão Maven).</li>
+        <li>Sem testes automatizados — validação feita pelos métodos <code>main</code>.</li>
+        <li>Algumas classes compartilham nomes em pacotes diferentes (ex.: <code>AgendaContatos</code> em <code>map</code> e <code>set</code>).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Bootcamp Java Backend Santander — DIO &middot; Collections Java API 2024</p>
+    <p style="margin-top: 0.5rem;">Licença: <a href="LICENSE">GNU GPL v3</a></p>
+  </footer>
+
+</body>
+</html>
